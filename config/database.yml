@@ -1,0 +1,19 @@
+default: &default
+  adapter: mysql2
+  collation: utf8mb4_unicode_ci
+  encoding: utf8mb4
+  pool: 10
+  reconnect: true
+  timeout: 5000
+
+development:
+  <<: *default
+  database: rspec-faker-dev
+  host: 127.0.0.1
+  username: root
+
+test:
+  <<: *default
+  database: rspec-faker-test
+  host: 127.0.0.1
+  username: root
